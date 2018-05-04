@@ -9,23 +9,23 @@ A TOTVS quer lançar um aplicativo de questionários. Foi feita uma planning com
 O usuário deve acessar a página e ter duas opções: Criar Novo Questionário ou Visualizar Questionário.
 
 Criar novo questionário:
-•	O usuário criará uma ou várias perguntas (com respostas do tipo texto ou verdadeiro/falso).
-•	Ao inserir as perguntas que deseja exibir, o usuário finaliza o formulário e lhe é apresentado uma senha de acesso e um QR Code.
+- O usuário criará uma ou várias perguntas (com respostas do tipo texto ou verdadeiro/falso).
+- Ao inserir as perguntas que deseja exibir, o usuário finaliza o formulário e lhe é apresentado uma senha de acesso e um QR Code.
 Visualizar Questionário
-•	Usuário insere uma senha de acesso (obtida quando finaliza a criação de um formulário) e pode visualizar todas as respostas obtidas para aquele formulário.
-•	Ao lado da resposta, ele visualiza o nome do usuário que fez o preenchimento e um botão para "Enviar uma notificação".
-•	Ao "Enviar uma Notificação", deve escrever um texto curto que será enviado ao usuário via Push Notifications.
-•	Ele pode clicar sobre o nome da pessoa e visualizar as respostas dela para as perguntas.
-•	Também deve ser possível visualizar o QR Code que está vinculado ao formulário.
+- Usuário insere uma senha de acesso (obtida quando finaliza a criação de um formulário) e pode visualizar todas as respostas obtidas para aquele formulário.
+- Ao lado da resposta, ele visualiza o nome do usuário que fez o preenchimento e um botão para "Enviar uma notificação".
+- Ao "Enviar uma Notificação", deve escrever um texto curto que será enviado ao usuário via Push Notifications.
+- Ele pode clicar sobre o nome da pessoa e visualizar as respostas dela para as perguntas.
+- Também deve ser possível visualizar o QR Code que está vinculado ao formulário.
  
 ## Construir o aplicativo do usuário
 
-•	O usuário deve fazer login no aplicativo utilizando sua conta no Facebook ou Google.
-•	Ao fazer login, deve aparecer uma tela com uma lista com todos os questionários cadastrados.
-•	Deve haver um botão para que ele faça a leitura de um QR Code (o mesmo gerado na página do administrador) e seja encaminhado diretamente para o questionário correspondente.
-•	Ao efetuar a leitura do QR Code, deve montar o formulário com as questões configuradas pelo administrador.
-•	Ao responder o questionário, retorna para a tela de lista com os questionários.
-•	O usuário poderá receber Push Notifications via aplicativo com mensagens do administrador.
+- O usuário deve fazer login no aplicativo utilizando sua conta no Facebook ou Google.
+- Ao fazer login, deve aparecer uma tela com uma lista com todos os questionários cadastrados.
+- Deve haver um botão para que ele faça a leitura de um QR Code (o mesmo gerado na página do administrador) e seja encaminhado diretamente para o questionário correspondente.
+- Ao efetuar a leitura do QR Code, deve montar o formulário com as questões configuradas pelo administrador.
+- Ao responder o questionário, retorna para a tela de lista com os questionários.
+- O usuário poderá receber Push Notifications via aplicativo com mensagens do administrador.
  
 ## Requisitos:
 
