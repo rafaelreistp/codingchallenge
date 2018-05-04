@@ -1,10 +1,10 @@
-# codingchallenge
 
-Desafio Mobile + Front-End
+
+# Desafio Mobile + Front-End
  
 A TOTVS quer lançar um aplicativo de questionários. Foi feita uma planning com o time o qual você é integrante e a sprint começou. Suas tarefas são as seguintes:
  
-Construir a Página do administrador.
+## Construir a Página do administrador.
  
 O usuário deve acessar a página e ter duas opções: Criar Novo Questionário ou Visualizar Questionário.
 
@@ -18,7 +18,8 @@ Visualizar Questionário
 •	Ele pode clicar sobre o nome da pessoa e visualizar as respostas dela para as perguntas.
 •	Também deve ser possível visualizar o QR Code que está vinculado ao formulário.
  
-Construir o aplicativo do usuário
+## Construir o aplicativo do usuário
+
 •	O usuário deve fazer login no aplicativo utilizando sua conta no Facebook ou Google.
 •	Ao fazer login, deve aparecer uma tela com uma lista com todos os questionários cadastrados.
 •	Deve haver um botão para que ele faça a leitura de um QR Code (o mesmo gerado na página do administrador) e seja encaminhado diretamente para o questionário correspondente.
@@ -26,24 +27,28 @@ Construir o aplicativo do usuário
 •	Ao responder o questionário, retorna para a tela de lista com os questionários.
 •	O usuário poderá receber Push Notifications via aplicativo com mensagens do administrador.
  
-Requisitos:
+## Requisitos:
+
     - Utilizar Angular ou React para construção da página do administrador (se você é um TOTVER e disputa uma vaga interna, a página do administrador deve ser feita em THF).
     - Utilizar Node.JS ou AdvPL para o desenvolvimento do Back-End.
     - Utilize ionic framework para desenvolvimento do aplicativo.
     - Descreva no README o passo a passo para execução do seu projeto.
     - Deixe seu repositório público para analise do Pull Request.
  
-Ganhe mais pontos:
+## Ganhe mais pontos:
+
     - Criação testes unitários e instrumentados.
     - Garantia da segurança dos dados.
     - Criação de uma estrutura de deploy da aplicação.
     - Garantia a escalabilidade da aplicação (Pessoas | Infraestrutura).
     - Fique à vontade para adicionar mais features no aplicativo desde que esteja dentro do contexto.
  
-Submissão:
+## Submissão:
+
     - Criar um fork deste repositório e entregar via Pull Request.
  
-Prazo de entrega sugerido:
+## Prazo de entrega sugerido:
+
     - 4 dias
  
 
