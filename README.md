@@ -9,9 +9,12 @@ A TOTVS quer lançar um aplicativo de questionários. Foi feita uma planning com
 O usuário deve acessar a página e ter duas opções: Criar Novo Questionário ou Visualizar Questionário.
 
 Criar novo questionário:
+
 - O usuário criará uma ou várias perguntas (com respostas do tipo texto ou verdadeiro/falso).
 - Ao inserir as perguntas que deseja exibir, o usuário finaliza o formulário e lhe é apresentado uma senha de acesso e um QR Code.
+
 Visualizar Questionário
+
 - Usuário insere uma senha de acesso (obtida quando finaliza a criação de um formulário) e pode visualizar todas as respostas obtidas para aquele formulário.
 - Ao lado da resposta, ele visualiza o nome do usuário que fez o preenchimento e um botão para "Enviar uma notificação".
 - Ao "Enviar uma Notificação", deve escrever um texto curto que será enviado ao usuário via Push Notifications.
