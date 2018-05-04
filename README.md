@@ -29,27 +29,27 @@ Visualizar Questionário
  
 ## Requisitos:
 
-    - Utilizar Angular ou React para construção da página do administrador (se você é um TOTVER e disputa uma vaga interna, a página do administrador deve ser feita em THF).
-    - Utilizar Node.JS ou AdvPL para o desenvolvimento do Back-End.
-    - Utilize ionic framework para desenvolvimento do aplicativo.
-    - Descreva no README o passo a passo para execução do seu projeto.
-    - Deixe seu repositório público para analise do Pull Request.
+- Utilizar Angular ou React para construção da página do administrador (se você é um TOTVER e disputa uma vaga interna, a página do administrador deve ser feita em THF).
+- Utilizar Node.JS ou AdvPL para o desenvolvimento do Back-End.
+- Utilize ionic framework para desenvolvimento do aplicativo.
+- Descreva no README o passo a passo para execução do seu projeto.
+- Deixe seu repositório público para analise do Pull Request.
  
 ## Ganhe mais pontos:
 
-    - Criação testes unitários e instrumentados.
-    - Garantia da segurança dos dados.
-    - Criação de uma estrutura de deploy da aplicação.
-    - Garantia a escalabilidade da aplicação (Pessoas | Infraestrutura).
-    - Fique à vontade para adicionar mais features no aplicativo desde que esteja dentro do contexto.
+- Criação testes unitários e instrumentados.
+- Garantia da segurança dos dados.
+- Criação de uma estrutura de deploy da aplicação.
+- Garantia a escalabilidade da aplicação (Pessoas | Infraestrutura).
+- Fique à vontade para adicionar mais features no aplicativo desde que esteja dentro do contexto.
  
 ## Submissão:
 
-    - Criar um fork deste repositório e entregar via Pull Request.
+- Criar um fork deste repositório e entregar via Pull Request.
  
 ## Prazo de entrega sugerido:
 
-    - 4 dias
+- 4 dias
  
 
 A palavra chave é: interação
