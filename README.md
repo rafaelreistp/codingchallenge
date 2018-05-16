@@ -1,67 +1,35 @@
 
-
 # Desafio Mobile + Front-End
- 
-A TOTVS quer lançar um aplicativo de questionários. Foi feita uma planning com o time o qual você é integrante e a sprint começou. Suas tarefas são as seguintes:
- 
-## Construir a Página do administrador.
- 
-O usuário deve acessar a página e ter duas opções: Criar Novo Questionário ou Visualizar Questionário.
 
-Criar novo questionário:
+## Objetivos:
 
-- O usuário criará uma ou várias perguntas (com respostas do tipo texto ou verdadeiro/falso).
-- Ao inserir as perguntas que deseja exibir, o usuário finaliza o formulário e lhe é apresentado uma senha de acesso e um QR Code.
+- Criação do backend com sistema de autenticação baseado em jwt usando banco de dados mysql para persistência.
 
-Visualizar Questionário
+- Criação do painel de administrador onde será possível criar novos questionários usando gerador de QR code.
 
-- Usuário insere uma senha de acesso (obtida quando finaliza a criação de um formulário) e pode visualizar todas as respostas obtidas para aquele formulário.
-- Ao lado da resposta, ele visualiza o nome do usuário que fez o preenchimento e um botão para "Enviar uma notificação".
-- Ao "Enviar uma Notificação", deve escrever um texto curto que será enviado ao usuário via Push Notifications.
-- Ele pode clicar sobre o nome da pessoa e visualizar as respostas dela para as perguntas.
-- Também deve ser possível visualizar o QR Code que está vinculado ao formulário.
- 
-## Construir o aplicativo do usuário
+- Criação do app mobile onde sera possível visualizar e responder todos os questionários, alem de ser direcionado para um específico a partir de um QR Code.
 
-- O usuário deve fazer login no aplicativo utilizando sua conta no Facebook ou Google.
-- Ao fazer login, deve aparecer uma tela com uma lista com todos os questionários cadastrados.
-- Deve haver um botão para que ele faça a leitura de um QR Code (o mesmo gerado na página do administrador) e seja encaminhado diretamente para o questionário correspondente.
-- Ao efetuar a leitura do QR Code, deve montar o formulário com as questões configuradas pelo administrador.
-- Ao responder o questionário, retorna para a tela de lista com os questionários.
-- O usuário poderá receber Push Notifications via aplicativo com mensagens do administrador.
- 
-## Requisitos:
+### Objetivos extras:
 
-- Utilizar Angular ou React para construção da página do administrador (se você é um TOTVER e disputa uma vaga interna, a página do administrador deve ser feita em THF).
-- Utilizar Node.JS ou AdvPL para o desenvolvimento do Back-End.
-- Utilize ionic framework para desenvolvimento do aplicativo.
-- Descreva no README o passo a passo para execução do seu projeto.
-- Deixe seu repositório público para analise do Pull Request.
- 
-## Ganhe mais pontos:
+- Implementar funcionalidade de push notification.
 
-- Criação testes unitários e instrumentados.
-- Garantia da segurança dos dados.
-- Criação de uma estrutura de deploy da aplicação.
-- Garantia a escalabilidade da aplicação (Pessoas | Infraestrutura).
-- Fique à vontade para adicionar mais features no aplicativo desde que esteja dentro do contexto.
- 
-## Submissão:
-
-- Criar um fork deste repositório e entregar via Pull Request.
- 
-## Prazo de entrega sugerido:
-
-- 4 dias
+- Criação de testes
  
 
-A palavra chave é: interação
+## Planejamento:
 
-Você não precisa concluir o desafio todo para criar seu Pull Request. Vá até onde conseguir da melhor forma possível, você será avaliado pelo avanço que obteve.
+### Dia 1:
 
-Descreva no seu README até que ponto do desafio você pretende realizar. Por exemplo:
+- Criação do banco de dados.
 
-- Criação do aplicativo e página do administrador, mas sem opção de envio de Push Notifications.
-- Criação somente do aplicativo, utilizando um QR Code ‘fake’ gerado via site: exemplo.com, com o seguinte conteúdo: etc etc etc.
-- Criação somente da página, simulando as respostas via aplicativo através de uma chamada REST feita via POSTMAN com as seguintes características...
-- etc.
+- Criação do backend com operações de crud sobre tabelas.
+
+- Criação de sistema de autenticação.
+
+### Dia 2 e 3:
+
+- Criação do painel de administrador
+
+## Dia 4 e 5:
+
+- Criação do app mobile
