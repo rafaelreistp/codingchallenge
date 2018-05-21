@@ -3,15 +3,15 @@ function PerguntaDAO(connection){
 }
 
 PerguntaDAO.prototype.busca = function(callback){
-    this._connection.query('SELECT * from pergunta', callback);
+    this._connection.query("SELECT id, pergunta, id_questionario, CASE WHEN tipo = 1 then 'Dissertativa' else 'Alternativa' end as tipo from", callback);
 }
 
 PerguntaDAO.prototype.buscaPorId = function(id, callback){
-    this._connection.query('SELECT * from pergunta WHERE id = ?', [id], callback);
+    this._connection.query("SELECT id, pergunta, id_questionario, CASE WHEN tipo = 1 then 'Dissertativa' else 'Alternativa' end as tipo from pergunta WHERE id = ?", [id], callback);
 }
 
 PerguntaDAO.prototype.buscaPorQuestionario = function(id, callback){
-    this._connection.query('SELECT * from pergunta WHERE id_questionario = ?', [id], callback);
+    this._connection.query("SELECT id, pergunta, id_questionario, CASE WHEN tipo = 1 then 'Dissertativa' else 'Alternativa' end as tipo from pergunta WHERE id_questionario = ?", [id], callback);
 }
 
 PerguntaDAO.prototype.insere = function(pergunta, callback){

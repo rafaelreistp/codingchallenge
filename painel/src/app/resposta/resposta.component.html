@@ -1,0 +1,15 @@
+<thf-page-list
+  t-title="Respostas"
+  [t-filter]="filterSettings">
+
+  <thf-table
+    t-single-select
+    t-sort="true"
+    t-striped="true"
+    [t-columns]="respostasColunas"
+    [t-items]="respostasFiltradas">
+
+  </thf-table>
+
+
+</thf-page-list>

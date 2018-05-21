@@ -1,0 +1,41 @@
+<thf-page-list
+  t-title="Questionários"
+  [t-actions]="actions"
+  [t-filter]="filterSettings">
+
+  <thf-table
+    t-single-select
+    t-sort="true"
+    t-striped="true"
+    [t-columns]="questionariosColunas"
+    [t-items]="questionariosFiltrados"
+    [t-actions]="tableActions">
+  </thf-table>
+
+</thf-page-list>
+
+<thf-modal
+  #adicionarQuestionarioModal
+  t-title="Novo Questionário"
+  [t-primary-action]="adicionarQuestionarioPrimaryAction">
+
+  <form #f="ngForm">
+    <thf-input
+      name="nomeQuestionario"
+      [(ngModel)]="nomeQuestionario"
+      t-clean
+      t-label="Nome"
+      t-required>
+    </thf-input>
+
+    <thf-select
+      name="categoriaQuestionario"
+      [(ngModel)]="categoriaQuestionario"
+      t-label="Categoria"
+      t-required
+      t-sort
+      [t-options]="listaDeCategorias">
+    </thf-select>
+  </form>
+
+</thf-modal>

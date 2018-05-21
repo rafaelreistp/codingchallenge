@@ -1,0 +1,40 @@
+<thf-page-list
+  t-title="Questionário {{questionarioId}}"
+  [t-actions]="actions">
+
+  <thf-table
+    t-single-select
+    t-sort="true"
+    t-striped="true"
+    [t-columns]="perguntasColunas"
+    [t-items]="perguntas"
+    [t-actions]="tableActions">
+  </thf-table>
+
+</thf-page-list>
+
+<thf-modal
+  #adicionarPerguntaModal
+  t-title="Pergunta"
+  [t-primary-action]="adicionarPerguntaPrimaryAction">
+
+  <form #f="ngForm">
+    <thf-input
+      name="nomeQuestionario"
+      [(ngModel)]="pergunta.pergunta"
+      t-clean
+      t-label="Pergunta"
+      t-required>
+    </thf-input>
+
+    <thf-select
+      name="categoriaQuestionario"
+      [(ngModel)]="pergunta.tipo"
+      t-label="Tipo"
+      t-required
+      t-sort
+      [t-options]="tiposDePergunta">
+    </thf-select>
+  </form>
+
+</thf-modal>

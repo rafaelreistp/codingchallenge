@@ -23,7 +23,7 @@ USE `questionariodb` ;
 CREATE TABLE IF NOT EXISTS `questionariodb`.`usuario` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(30) NOT NULL,
-  `senha` VARCHAR(20) NOT NULL,
+  `senha` VARCHAR(256) NOT NULL,
   `email` VARCHAR(50) NOT NULL,
   `permissao` INT NOT NULL,
   PRIMARY KEY (`id`),

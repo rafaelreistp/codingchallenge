@@ -21,49 +21,47 @@ module.exports = function(app){
 
     app.get('/resposta', (req, res) => {
         let connection = app.db.connectionFactory();
-        let respostaDAO = new app.db.RespostaDAO(connection);
+        let respostaDao = new app.db.RespostaDAO(connection);
 
-        let questionarioId = req.headers['questionario'];
-        let usuarioId = req.headers['usuario'];
+        respostaDao.buscaSumarizada( (err, results) => {
+            if(err){
+                console.log(err);
+                return res.status(500).send(err);
+            } else{
+                return res.status(200).json(results);
+            }
+        });
+    })
 
-        if(! questionarioId && !usuarioId ){
-            respostaDAO.busca( (err, results) => {
-                if(err){
-                    console.log(err);
-                    return res.status(500).send(err);;
-                } else{
-                    return res.status(200).json(results);;
-                }
-            });
-        } else if(! questionarioId){
-            respostaDAO.buscaPorUsuario(usuarioId, (err, results) => {
-                if(err){
-                    console.log(err);
-                    return res.status(500).send(err);
-                } else{
-                    return res.status(200).json(results);
-                }
-            });
-        } else if(! usuarioId){
-            respostaDAO.buscaPorQuestionario(questionarioId, (err, results) => {
-                if(err){
-                    console.log(err);
-                    return res.status(500).send(err);
-                } else{
-                    return res.status(200).json(results);
-                }
-            });
-        } else{
-            respostaDAO.buscaPorQuestionarioUsuario(questionarioId, usuarioId, (err, results) => {
-                if(err){
-                    console.log(err);
-                    return res.status(500).send(err);
-                } else{
-                    return res.status(200).json(results);
-                }
-            });
-        }
+    app.get('/resposta/:id', (req, res) => {
+        let connection = app.db.connectionFactory();
+        let respostaDao = new app.db.RespostaDAO(connection);
+        let questionarioId = req.params.id;
 
+        respostaDao.buscaSumarizadaPorQuestionario(questionarioId, (err, results) => {
+            if(err){
+                console.log(err);
+                return res.status(500).send(err);
+            } else{
+                return res.status(200).json(results);
+            }
+        })
     });
+
+    app.get('/resposta/:questionarioId/:usuarioId', (req, res) => {
+        let connection = app.db.connectionFactory();
+        let respostaDAO = new app.db.RespostaDAO(connection);
+        let questionarioId = req.params.questionarioId;
+        let usuarioId = req.params.usuarioId;
+
+        respostaDAO.buscaPorQuestionarioUsuario(questionarioId, usuarioId, (err, results) => {
+            if(err){
+                console.log(err);
+                return res.status(500).send(err);
+            } else{
+                return res.status(200).json(results);
+            }
+        })
+    })
 
 }

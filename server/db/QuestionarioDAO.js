@@ -3,7 +3,7 @@ function QuestionarioDAO(connection){
 }
 
 QuestionarioDAO.prototype.busca = function(callback){
-    this._connection.query('SELECT * from questionario', callback);
+    this._connection.query("SELECT questionario.id, questionario.qr_code, questionario.nome,  usuario.nome AS nome_usuario, CASE WHEN questionario.categoria = 1 THEN 'Tecnologia' ELSE 'Negócios' END AS categoria from questionario join usuario on questionario.id_usuario = usuario.id", callback);
 }
 
 QuestionarioDAO.prototype.buscaPorId = function(id, callback){

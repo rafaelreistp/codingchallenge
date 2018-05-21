@@ -68,7 +68,7 @@ module.exports = function(app) {
     app.use('/*', function verifyToken(req, res, next){
         let connection = app.db.connectionFactory();
         let usuarioDAO = new app.db.UsuarioDAO(connection);
-        let token = req.headers['x-access-token'];
+        let token = (req.body && req.body.access_token) || (req.query && req.query.access_token) || req.headers['x-access-token'];
         if (!token){
             return res.status(403).send({ auth: false, message: 'Nenhum token fornecido.' });
         } else{

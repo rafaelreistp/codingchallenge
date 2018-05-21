@@ -1,21 +1,29 @@
 module.exports = function(app){
     app.post('/questionario/', (req, res) => {
         let questionario = req.body;
-        questionario.id_usuario = req.userId;
-
         let connection = app.db.connectionFactory();
         let questionarioDAO = new app.db.QuestionarioDAO(connection);
-        questionarioDAO.insere(questionario, (err, result) => {
-            if (err) {
+        // questionario.id_usuario = req.userId;
+        questionario.id_usuario = '1';
+        app.qrCode.toDataURL(questionario.nome, (err, url) =>{
+            if(err){
                 console.log(err);
-                return res.status(500).send(err);;
-            }
-            else {
-                questionario.id = result.insertId;
-                console.log('Questionario de id ' + questionario.id + ' criado!');
-                return res.status(201).send('Questionario de id ' + questionario.id + ' criado!');;
-            }
+            }else{
+                questionario.qr_code = url;
+                questionarioDAO.insere(questionario, (err, result) => {
+                    if (err) {
+                        console.log(err);
+                        return res.status(500).send(err);;
+                    }
+                    else {
+                        questionario.id = result.insertId;
+                        console.log('Questionario de id ' + questionario.id + ' criado!');
+                        return res.status(201).send({ id: questionario.id });
+                    }
+                });
+            } 
         });
+
     });
 
     app.get('/questionario/', (req,res) => {
@@ -26,9 +34,10 @@ module.exports = function(app){
 
             if(err){
                 console.log(err);
-                return res.status(500).send(err);;
+                return res.status(500).send(err);
             } else{
-                return res.status(200).json(results);;
+                console.log(results);
+                return res.status(200).json(results);
             }
 
         });
@@ -41,14 +50,14 @@ module.exports = function(app){
 
         questionarioDAO.buscaPorId(id, (err, results) => {
             if(results.length == 0){
-                return res.status(204).send('Questionário não encontrado.');;
+                return res.status(204).send('Questionário não encontrado.');
             }
             else if (err){
                 console.log(err);
-                return res.status(500).send(err);;
+                return res.status(500).send(err);
             }
             else{
-                return res.status(200).json(results);;
+                return res.status(200).json(results);
             }
         });
     });
