@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Questionarios</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content *ngIf="questionariosRespondidos">
+    <ion-list>
+        <ion-item *ngFor="let item of questionarios" (click)="itemTapped($event, item)">
+          <ion-thumbnail item-start>
+            <img src="assets/imgs/logo.png">
+          </ion-thumbnail>
+          <h2>{{item.nome}}</h2>
+          <p>{{item.categoria}}</p>
+          <button ion-button clear item-end *ngIf="!buscaQuestionarioRespondido(item.id)">Responder</button>
+        </ion-item>
+   </ion-list>
+</ion-content>

@@ -1,0 +1,11 @@
+<ion-item [formGroup]="form" [ngSwitch]="question.controlType">
+    <ion-label floating>{{question.pergunta}}</ion-label>
+  
+      <ion-input *ngSwitchCase="'textbox'" [formControlName]="question.id"
+              [id]="question.id"></ion-input>
+  
+      <ion-select [id]="question.id" *ngSwitchCase="'dropdown'" [formControlName]="question.id" multiple="false">
+        <ion-option *ngFor="let opt of question.options" [value]="opt.key">{{opt.value}}</ion-option>
+      </ion-select>
+  
+</ion-item>

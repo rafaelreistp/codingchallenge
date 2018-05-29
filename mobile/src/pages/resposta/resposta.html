@@ -1,0 +1,20 @@
+<!--
+  Generated template for the RespostaPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{nomeQuestionario}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <app-dynamic-form *ngIf="perguntas.length > 0" [questions]="perguntas"></app-dynamic-form>
+
+</ion-content>
