@@ -66,6 +66,7 @@ export class PerguntaComponent implements OnInit {
   carregarPerguntas(){
     this.perguntaService.getItems(this.questionarioId).subscribe( items => {
       this.perguntas = items;
+      console.log(this.perguntas);
     }, err => {
       console.log(err);
     });

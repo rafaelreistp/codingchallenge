@@ -3,7 +3,7 @@ function PerguntaDAO(connection){
 }
 
 PerguntaDAO.prototype.busca = function(callback){
-    this._connection.query("SELECT id, pergunta, id_questionario, CASE WHEN tipo = 1 then 'Dissertativa' else 'Alternativa' end as tipo from", callback);
+    this._connection.query("SELECT id, pergunta, id_questionario, CASE WHEN tipo = 1 then 'Dissertativa' else 'Alternativa' end as tipo from pergunta", callback);
 }
 
 PerguntaDAO.prototype.buscaPorId = function(id, callback){

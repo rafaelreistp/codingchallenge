@@ -1,37 +1,26 @@
 module.exports = function(app){
 
     app.post('/resposta', (req, res) => {
-        let resposta = req.body;
-        resposta.id_usuario = req.userId;
+        let body = req.body;
+        let respostas = [];
+        
+        for(let property in body){
+            respostas.push([body[property],property,req.userId ])
+        }
 
         let connection = app.db.connectionFactory();
         let respostaDAO = new app.db.RespostaDAO(connection);
-        respostaDAO.insere(resposta, (err, results) => {
+        respostaDAO.insere(respostas, (err, results) => {
             if (err) {
                 console.log(err);
                 return res.status(500).send(err);
             }
             else {
-                resposta.id = results.insertId;
-                console.log('Resposta de id ' + resposta.id + ' criado!');
-                return res.status(201).send('Resposta de id ' + resposta.id + ' criado!');;
+                return res.status(201).json(results);
             }
         });
+        connection.end();
     });
-
-    app.get('/resposta', (req, res) => {
-        let connection = app.db.connectionFactory();
-        let respostaDao = new app.db.RespostaDAO(connection);
-
-        respostaDao.buscaSumarizada( (err, results) => {
-            if(err){
-                console.log(err);
-                return res.status(500).send(err);
-            } else{
-                return res.status(200).json(results);
-            }
-        });
-    })
 
     app.get('/resposta/:id', (req, res) => {
         let connection = app.db.connectionFactory();
@@ -39,6 +28,21 @@ module.exports = function(app){
         let questionarioId = req.params.id;
 
         respostaDao.buscaSumarizadaPorQuestionario(questionarioId, (err, results) => {
+            if(err){
+                console.log(err);
+                return res.status(500).send(err);
+            } else{
+                return res.status(200).json(results);
+            }
+        })
+    });
+
+    app.get('/resposta/', (req, res) => {
+        let connection = app.db.connectionFactory();
+        let respostaDao = new app.db.RespostaDAO(connection);
+        let usuarioId = req.userId;
+
+        respostaDao.buscaSumarizadaPorUsuario(usuarioId, (err, results) => {
             if(err){
                 console.log(err);
                 return res.status(500).send(err);

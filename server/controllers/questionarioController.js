@@ -3,8 +3,7 @@ module.exports = function(app){
         let questionario = req.body;
         let connection = app.db.connectionFactory();
         let questionarioDAO = new app.db.QuestionarioDAO(connection);
-        // questionario.id_usuario = req.userId;
-        questionario.id_usuario = '1';
+        questionario.id_usuario = req.userId;
         app.qrCode.toDataURL(questionario.nome, (err, url) =>{
             if(err){
                 console.log(err);
@@ -13,7 +12,7 @@ module.exports = function(app){
                 questionarioDAO.insere(questionario, (err, result) => {
                     if (err) {
                         console.log(err);
-                        return res.status(500).send(err);;
+                        return res.status(500).send(err);
                     }
                     else {
                         questionario.id = result.insertId;
@@ -36,7 +35,6 @@ module.exports = function(app){
                 console.log(err);
                 return res.status(500).send(err);
             } else{
-                console.log(results);
                 return res.status(200).json(results);
             }
 

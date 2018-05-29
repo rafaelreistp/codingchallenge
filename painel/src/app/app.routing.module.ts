@@ -9,6 +9,7 @@ import { LoggedInGuard } from '../services/loggedinGuard';
 
 
 const routes: Routes = [
+  {path: 'login', component: LoginComponent },
   { path: 'questionario', component: QuestionarioComponent, canActivate: [LoggedInGuard] },
   { path: 'pergunta/:id', component: PerguntaComponent, canActivate: [LoggedInGuard] },
   { path: 'resposta', component: RespostaComponent, canActivate: [LoggedInGuard] },

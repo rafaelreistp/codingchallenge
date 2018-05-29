@@ -10,8 +10,6 @@ import { ThfNotificationService } from '@totvs/thf-ui/services/thf-notification/
 })
 export class LoginComponent implements OnInit {
 
-  private loginPage : boolean = true;
-
   constructor(private userService: UserService, private router : Router, private thfNotification: ThfNotificationService) { }
 
   ngOnInit() {

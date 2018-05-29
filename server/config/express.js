@@ -21,13 +21,9 @@ module.exports = function(){
     res.header("Access-Control-Expose-Headers", "x-access-token");
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
     res.header("Access-Control-Allow-Headers", "x-access-token, Origin, X-Requested-With, X-XSRF-TOKEN, Authorization, Content-Type, Accept");
+    res.header('Access-Control-Allow-Credentials', true);
 
-    if ('OPTIONS' === req.method) {
-      res.sendStatus(200);
-    }
-    else {
-      next();
-    }
+    next();
 });
 
   consign()

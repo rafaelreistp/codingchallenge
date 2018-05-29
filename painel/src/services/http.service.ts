@@ -28,15 +28,15 @@ export class HttpService extends Http {
       return super.request(url, options).catch(this.catchAuthError(this));
     }
     
-      private catchAuthError (self: HttpService) {
-        // we have to pass HttpService's own instance here as `self`
-        return (res: Response) => {
+    private catchAuthError (self: HttpService) {
+      // we have to pass HttpService's own instance here as `self`
+      return (res: Response) => {
+        console.log(res);
+        if (res.status === 401 || res.status === 403) {
+          // if not authenticated
           console.log(res);
-          if (res.status === 401 || res.status === 403) {
-            // if not authenticated
-            console.log(res);
-          }
-          return Observable.throw(res);
-        };
-      }
+        }
+        return Observable.throw(res);
+      };
+    }
 }

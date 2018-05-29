@@ -33,31 +33,12 @@ module.exports = function(app){
         });
     });
 
-    app.get('/pergunta/q/:id', (req, res) => {
-        let connection = app.db.connectionFactory();
-        let perguntaDAO = new app.db.PerguntaDAO(connection);
-        let id = req.params.id;
-
-        perguntaDAO.buscaPorQuestionario(id, (err, results) => {
-            if(results.length == 0){
-                return res.status(204).send('Nenhuma pergunta encontrada.');
-            }
-            else if (err){
-                console.log(err);
-                return res.status(500).send(err);
-            }
-            else{
-                return res.status(200).json(results);
-            }
-        });
-    });
-
     app.get('/pergunta/:id', (req, res) => {
         let connection = app.db.connectionFactory();
         let perguntaDAO = new app.db.PerguntaDAO(connection);
         let id = req.params.id;
 
-        perguntaDAO.buscaPorId(id, (err, results) => {
+        perguntaDAO.buscaPorQuestionario(id, (err, results) => {
             if(results.length == 0){
                 return res.status(204).send('Nenhuma pergunta encontrada.');
             }

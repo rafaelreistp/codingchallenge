@@ -1,3 +1,4 @@
+import { HttpService } from './http.service';
 import { RouterModule, Routes, Router } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { ThfTableColumn } from '@totvs/thf-ui/components/thf-table';
@@ -9,7 +10,7 @@ export class PerguntaService{
 
     private headers : Headers;
     private url : string;
-    constructor(private http: Http, private router: Router){
+    constructor(private http: HttpService, private router: Router){
         this.headers = new Headers({'Content-Type': 'application/json; charset=utf-8'});
         this.url = 'http://localhost:8080/pergunta/';
     }
@@ -23,7 +24,7 @@ export class PerguntaService{
 
     getItems(idQuestionario) {
         return this.http
-        .get(this.url + 'q/' + idQuestionario)
+        .get(this.url + idQuestionario)
         .map(res => res.json());
     }
 
